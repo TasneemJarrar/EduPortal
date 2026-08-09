@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
+  <title>EduPortal - Student Management</title>
+  <link rel="shortcut icon" href="./assets/img/icon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,14 +39,14 @@
       </div>
       <div class="mt-3 flex gap-5 items-center">
         <button
-          class="mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105  hover:shadow-2xl  dark:shadow-black/40 transition-all font-semibold text-xl">
+          class="mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105 hover:shadow-2xl dark:shadow-black/40 transition-all font-semibold ">
           <i class="fa-regular fa-moon mode-icon"></i>
         </button>
         <div class="hidden sm:inline">
           <p class="text-xs uppercase  font-semibold">
             Current Time
           </p>
-          <div class="clock mt-1 text-lg font-bold tracking-tight"></div>
+          <div class="clock mt-1 text-md font-bold tracking-tight"></div>
         </div>
       </div>
       <nav id="sidebarNav" class="flex flex-col gap-1">
@@ -85,14 +85,14 @@
 
       <div class="mt-3 flex gap-5 items-center">
         <button
-          class="mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105  hover:shadow-2xl  dark:shadow-black/40 transition-all font-semibold text-xl">
+          class="mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105 hover:shadow-2xl dark:shadow-black/40 transition-all font-semibold ">
           <i class="fa-regular fa-moon mode-icon"></i>
         </button>
         <div class="hidden sm:inline">
           <p class="text-xs uppercase  font-semibold">
             Current Time
           </p>
-          <div class="clock mt-1 text-lg font-bold tracking-tight"></div>
+          <div class="clock mt-1 text-md font-bold tracking-tight"></div>
         </div>
       </div>
     </header>
@@ -102,66 +102,54 @@
         <h1 class="font-heading font-bold text-2xl mb-1">Welcome Back!</h1>
         <p class="text-gray-500 dark:text-gray-400 mb-6">Here is the current enrollment status for the Spring semester.
         </p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
 
           <div class="bg-violet-100 dark:bg-slate-900 font-heading rounded-2xl p-5 shadow-sm min-w-48">
             <div class="flex justify-between items-center">
               <p class="uppercase text-xs font-semibold text-violet-500 dark:text-violet-300">Total Students</p>
               <div
-                class="flex justify-center items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
+                class="flex justify-center text-md items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
                 <i class="fa-solid fa-users"></i>
               </div>
             </div>
-            <p id="courseStatus" class="font-bold text-center w-full text-2xl text-violet-500 dark:text-violet-300">0
+            <p id="statStudents" class="font-bold text-center w-full text-xl text-violet-500 dark:text-violet-300">0
             </p>
           </div>
 
           <div class="bg-violet-100 dark:bg-slate-900 font-heading rounded-2xl p-5 shadow-sm min-w-48">
             <div class="flex justify-between items-center">
-              <p class="uppercase text-xs font-semibold text-violet-500 dark:text-violet-300">Total Students</p>
+              <p class="uppercase text-xs font-semibold text-violet-500 dark:text-violet-300">Total Courses</p>
               <div
-                class="flex justify-center items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
-                <i class="fa-solid fa-users"></i>
+                class="flex justify-center text-md items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
+                <i class="fa-solid fa-clipboard"></i>
               </div>
             </div>
-            <p id="courseStatus" class="font-bold text-center w-full text-2xl text-violet-500 dark:text-violet-300">0
+            <p id="statCourses" class="font-bold text-center w-full text-xl text-violet-500 dark:text-violet-300">0
             </p>
           </div>
 
           <div class="bg-violet-100 dark:bg-slate-900 font-heading rounded-2xl p-5 shadow-sm min-w-48">
             <div class="flex justify-between items-center">
-              <p class="uppercase text-xs font-semibold text-violet-500 dark:text-violet-300">Total Students</p>
+              <p class="uppercase text-xs font-semibold text-violet-500 dark:text-violet-300">Active Enrollments</p>
               <div
-                class="flex justify-center items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
-                <i class="fa-solid fa-users"></i>
+                class="flex justify-center text-md items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
+                <i class="fa-solid fa-user-check"></i>
               </div>
             </div>
-            <p id="courseStatus" class="font-bold text-center w-full text-2xl text-violet-500 dark:text-violet-300">0
-            </p>
-          </div>
-
-          <div class="bg-violet-100 dark:bg-slate-900 font-heading rounded-2xl p-5 shadow-sm min-w-48">
-            <div class="flex justify-between items-center">
-              <p class="uppercase text-xs font-semibold text-violet-500 dark:text-violet-300">Total Students</p>
-              <div
-                class="flex justify-center items-center w-10 h-10 rounded-2xl text-violet-500 dark:text-violet-300 bg-violet-50 dark:bg-slate-950">
-                <i class="fa-solid fa-users"></i>
-              </div>
-            </div>
-            <p id="courseStatus" class="font-bold text-center w-full text-2xl text-violet-500 dark:text-violet-300">0
+            <p id="statEnroll" class="font-bold text-center w-full text-xl text-violet-500 dark:text-violet-300">0
             </p>
           </div>
 
         </div>
         <div>
           <div class="flex justify-between items-center">
-            <h2 class="font-heading font-semibold text-lg mb-3">Recent Enrollments</h2>
+            <h2 class="font-heading font-semibold text-md mb-3">Recent Enrollments</h2>
             <button data-view="enroll"
               class="flex gap-1 items-center font-heading text-xs transition-all ease-in-out hover:-translate-y-0.5">View
               All <i class="fa-solid fa-arrow-right"></i></button>
           </div>
           <div class="bg-violet-100 dark:bg-slate-900 p-4">
-            <ul id="EmrollmentLog" class="flex flex-col gap-1 text-sm text-violet-500 dark:text-violet-300"></ul>
+            <ul id="enrollmentLog" class="flex flex-col gap-1 text-sm text-violet-500 dark:text-violet-300"></ul>
           </div>
         </div>
       </section>
@@ -175,6 +163,7 @@
             <i class="fa-solid fa-user-plus text-xl text-amber-400 dark:text-amber-500"></i>
             <p class="text-violet-950 dark:text-violet-50 font-bold text-xl">Add New Student</p>
           </div>
+
           <form id="studentForm" class="mt-3 grid sm:grid-cols-2 md:grid-cols-3 gap-4 items-end">
             <div>
               <label for="studentfullname"
@@ -196,13 +185,6 @@
           </form>
         </div>
 
-        <div class="flex items-center justify-between mb-3">
-          <p class="font-heading font-semibold text-sm text-violet-500 dark:text-violet-300" id="studentCount">0
-            selected</p>
-          <button id=" hidden deleteStudentBtn"
-            class="px-4 py-2 bg-red-400 dark:bg-red-300 text-violet-50 rounded-full font-bold text-xs">Remove
-            Selected</button>
-        </div>
         <div id="studentsList" class="grid md:grid-cols-2 gap-4"></div>
       </section>
 
@@ -248,14 +230,7 @@
           </form>
         </div>
 
-        <div class="flex items-center justify-between mb-3">
-          <p class="font-heading font-semibold text-sm text-violet-500 dark:text-violet-300" id="courseCount">0 selected
-          </p>
-          <button id=" hidden deleteCourseBtn"
-            class="px-4 py-2 bg-red-400 dark:bg-red-300 text-violet-50 rounded-full font-bold text-xs">Remove
-            Selected</button>
-        </div>
-        <div id="studentsList" class="grid md:grid-cols-2 gap-4"></div>
+        <div id="coursesList" class="grid md:grid-cols-2 gap-4"></div>
       </section>
 
       <section class="hidden enrollmentView">
@@ -292,7 +267,7 @@
 
       <section class="hidden searchView">
         <input type="text" id="searchInput" placeholder="Search students by name or ID..."
-          class="w-full px-4 py-3 rounded-2xl shadow-sm bg-violet-100 border-2 border-transparent focus:border-violet-500 dark:focus:border-violet-400 text-sm outline-none transition-all ease-in-out mb-4" />
+          class="w-full px-4 py-3 rounded-2xl shadow-sm bg-violet-100 dark:bg-slate-900 border-2 border-transparent focus:border-violet-500 dark:focus:border-violet-400 text-sm outline-none transition-all ease-in-out mb-4" />
 
         <div id="searchRsults" class="flex flex-col gap-3"></div>
       </section>
@@ -317,7 +292,6 @@
       class="nav-btn-mobile flex items-center gap-2 px-3 py-1 rounded-2xl font-heading font-semibold text-sm transition-all"><i
         class="fa-solid fa-magnifying-glass"></i> Search</button>
   </nav>
-
 
   <script src="./assets/js/main.js"></script>
 </body>
