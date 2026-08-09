@@ -188,7 +188,7 @@ const AddStudents = () => {
     courseSet.forEach((courseId) => {
       const course = courses.find((c) => c.id === courseId);
       if (course) {
-        chips += `<span class="text-xs bg-violet-50 dark:bg-slate-950 px-2 py-1 rounded-full inline-flex items-center gap-1 mr-1">${course.name}<button onclick="removeEnrollment(${id},${courseId})" class="text-red-400 ml-1">✕</button></span>`;
+        chips += `<span class="text-xs bg-violet-50 dark:bg-slate-950 px-3 py-1 rounded-full flex items-center gap-2 mr-2">${course.name}<button onclick="removeEnrollment(${id},${courseId})" class="text-red-400 ml-1"><i class="fa-solid fa-xmark"></i></button></span>`;
       }
     });
 
@@ -409,7 +409,7 @@ function search() {
 
     let chips = "";
     for (let j = 0; j < courseObjs.length; j++) {
-      chips += `<span class="text-xs bg-violet-50 dark:bg-slate-950 px-2 py-1 rounded-full mr-1">${courseObjs[j].name}</span>`;
+      chips += `<span class="text-xs bg-violet-50 dark:bg-slate-950 px-3 py-1 rounded-full mr-1">${courseObjs[j].name}</span>`;
     }
 
     list += `
