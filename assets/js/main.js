@@ -51,6 +51,7 @@ const VIEWS = {
   courses: ".coursesView",
   enroll: ".enrollmentView",
   search: ".searchView",
+  profile: ".profileView",
 };
 
 const enrolledCountFor = (courseId) =>
@@ -87,7 +88,6 @@ const getFromLocal = () => {
 };
 
 //dark mode
-
 if (localStorage.getItem("theme") == "dark") {
   html.classList.add("dark");
   modeicons.forEach((icon) => icon.classList.replace("fa-moon", "fa-sun"));
@@ -122,7 +122,7 @@ const switchViews = (view) => {
   document.querySelector(VIEWS[view]).classList.remove("hidden");
   document.querySelectorAll(".nav-btn, .nav-btn-mobile").forEach((btn) => {
     const active = btn.dataset.view === view;
-    btn.classList.toggle("bg-violet-500/50", active);
+    btn.classList.toggle("bg-violet-500", active);
     btn.classList.toggle("text-white", active);
   });
   if (view === "home") updateDashboard();
@@ -152,7 +152,7 @@ const logActivity = (msg) => {
     Array.from(activityLog)
       .reverse()
       .filter(Boolean)
-      .map((m) => `<li>${m}</li>`)
+      .map((m) => `<li class="">${m}</li>`)
       .join("") || `<li>No Activity Yet.</li>`;
 };
 
@@ -188,12 +188,12 @@ const AddStudents = () => {
     courseSet.forEach((courseId) => {
       const course = courses.find((c) => c.id === courseId);
       if (course) {
-        chips += `<span class="text-xs bg-violet-50 dark:bg-slate-950 px-3 py-1 rounded-full flex items-center gap-2 mr-2">${course.name}<button onclick="removeEnrollment(${id},${courseId})" class="text-red-400 ml-1"><i class="fa-solid fa-xmark"></i></button></span>`;
+        chips += `<span class="text-xs bg-violet-100 dark:bg-slate-950 px-3 py-1 rounded-full flex items-center gap-2 mr-2">${course.name}<button onclick="removeEnrollment(${id},${courseId})" class="text-red-400 ml-1"><i class="fa-solid fa-xmark"></i></button></span>`;
       }
     });
 
     list += `
-      <div class="bg-violet-100 dark:bg-slate-900 rounded-2xl p-4">
+      <div class="bg-violet-50 dark:bg-slate-900 rounded-2xl p-4">
         <div class="flex justify-between items-start">
           <div>
             <p class="font-bold">${name}</p>
@@ -252,7 +252,7 @@ const AddCourses = () => {
     const full = count >= capacity;
 
     list += `
-      <div class="bg-violet-100 dark:bg-slate-900 rounded-2xl p-4">
+      <div class="bg-violet-50 dark:bg-slate-900 rounded-2xl p-4">
         <div class="flex justify-between items-start">
           <div>
             <p class="font-bold">${name}</p>
@@ -299,8 +299,8 @@ const enrollPicker = () => {
     const { id, name } = students[i];
     const active =
       id === selectedStudentId
-        ? "bg-violet-500 text-white"
-        : "bg-violet-50 dark:bg-slate-950";
+        ? "bg-violet-1000 text-white"
+        : "bg-violet-100 dark:bg-slate-950";
     studentButtons += `<button onclick="pickStudent(${id})" class="text-left px-4 py-2 rounded-xl text-sm font-semibold ${active}">${name}</button>`;
   }
   enrollstudentsList.innerHTML =
@@ -313,8 +313,8 @@ const enrollPicker = () => {
     const full = count >= capacity;
     const active =
       id === selectedCourseId
-        ? "bg-violet-500 text-white"
-        : "bg-violet-50 dark:bg-slate-950";
+        ? "bg-violet-1000 text-white"
+        : "bg-violet-100 dark:bg-slate-950";
     courseButtons += `<button ${full ? "disabled" : ""} onclick="pickCourse(${id})" class="text-left px-4 py-2 rounded-xl text-sm font-semibold ${active} ${full ? "opacity-40" : ""}">${name} (${count}/${capacity})</button>`;
   }
   enrollcoursesList.innerHTML =
@@ -372,7 +372,7 @@ const enrollSumarry = () => {
     });
 
     list += `
-      <div class="bg-violet-100 dark:bg-slate-900 rounded-2xl p-4">
+      <div class="bg-violet-50 dark:bg-slate-900 rounded-2xl p-4">
         <p class="font-bold text-sm">${student.name}</p>
         <p class="text-xs text-violet-500 dark:text-violet-300">${names.length ? names.join(", ") : "No courses yet"}</p>
       </div>`;
@@ -409,11 +409,11 @@ function search() {
 
     let chips = "";
     for (let j = 0; j < courseObjs.length; j++) {
-      chips += `<span class="text-xs bg-violet-50 dark:bg-slate-950 px-3 py-1 rounded-full mr-1">${courseObjs[j].name}</span>`;
+      chips += `<span class="text-xs bg-violet-100 dark:bg-slate-950 px-3 py-1 rounded-full mr-1">${courseObjs[j].name}</span>`;
     }
 
     list += `
-      <div class="bg-violet-100 dark:bg-slate-900 rounded-2xl p-4">
+      <div class="bg-violet-50 dark:bg-slate-900 rounded-2xl p-4">
         <div class="flex justify-between items-center">
           <p class="font-bold">${name}</p>
           ${allFull ? '<span class="text-xs font-bold text-red-400">All full</span>' : hasOpenSlot ? '<span class="text-xs font-bold text-green-500">Has open slot</span>' : ""}
