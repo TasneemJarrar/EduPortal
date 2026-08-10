@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Create Your Account - Join EduPortal and get started with your student profile.</title>
   <link rel="shortcut icon" href="./assets/img/icon.ico" type="image/x-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,13 @@
 </head>
 
 <body class="min-h-screen font-body bg-violet-100 dark:bg-slate-950 text-violet-950 dark:text-violet-50">
-  <button
-    class="mb-2 mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105 hover:shadow-2xl dark:shadow-black/40 transition-all font-semibold ">
-    <i class="fa-regular fa-moon mode-icon"></i>
-  </button>
 
   <div class="container mx-auto max-w-2xl p-8">
-    <div class="flex flex-col gap-2 items-center justify-center p-5 rounded-xl bg-white dark:bg-slate-900">
+    <div class="relative flex flex-col gap-2  p-5 rounded-xl bg-white dark:bg-slate-900">
+      <button
+        class="absolute mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105 hover:shadow-2xl dark:shadow-black/40 transition-all font-semibold ">
+        <i class="fa-regular fa-moon mode-icon"></i>
+      </button>
       <div class="flex flex-col items-center justify-center gap-2">
         <div
           class="w-12 h-12 rounded-xl bg-violet-500 dark:bg-violet-400 flex items-center justify-center text-white font-bold text-xl">
@@ -45,13 +45,15 @@
 
           <div class="mb-3 flex flex-col gap-2 w-full">
             <label for="username" class="text-sm ml-2 font-bold">User Name</label>
-            <input id="username" type="text" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl" id="username">
+            <input id="username" type="text" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl"
+              id="username">
           </div>
         </div>
 
         <div class="mb-3 flex flex-col gap-2">
           <label for="emailadress" class="text-sm ml-2 font-bold">Email Address</label>
-          <input id="email" type="email" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl" id="emailadress">
+          <input id="email" type="email" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl"
+            id="emailadress">
         </div>
 
         <div class="mb-3 flex flex-col gap-2">
@@ -61,12 +63,14 @@
 
         <div class="mb-3 flex flex-col gap-2">
           <label for="password" class="text-sm ml-2 font-bold">Password</label>
-          <input id="password" type="password" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl" id="password">
+          <input id="password" type="password" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl"
+            id="password">
         </div>
 
         <div class="mb-3 flex flex-col gap-2">
           <label for="usertype" class="text-sm ml-2 font-bold">User Type</label>
-          <select id="usertype" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl ext-xs font-bold" id="usertype">
+          <select id="usertype" class="outline-none bg-violet-100 dark:bg-slate-950 p-2 rounded-xl ext-xs font-bold"
+            id="usertype">
             <option value="user" selected>User</option>
             <option value="admin">Admin</option>
           </select>
@@ -78,7 +82,8 @@
           <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
       </form>
       <div class="flex flex-col gap-2">
-        <p class="flex gap-1">Already have an account? <a href="#" class="text-violet-500 dark:text-violet-400">Sign In</a></p>
+        <p class="flex gap-1">Already have an account? <a href="#" class="text-violet-500 dark:text-violet-400">Sign
+            In</a></p>
       </div>
     </div>
   </div>

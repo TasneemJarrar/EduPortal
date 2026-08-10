@@ -53,7 +53,7 @@ const nextCourseId = () => courseSeq++;
 
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 if (!currentUser) {
-  window.location.href = "login.html";
+  window.location.href = "register.html";
 }
 
 const VIEWS = {
