@@ -9,6 +9,12 @@ const statStudents = document.querySelector("#statStudents");
 const statCourses = document.querySelector("#statCourses");
 const statEnroll = document.querySelector("#statEnroll");
 
+//profile
+const userName = document.querySelector("#userName");
+const userRole = document.querySelector("#userRole");
+const userEmail = document.querySelector("#userEmail");
+const userPhone = document.querySelector("#userPhone");
+
 //students
 const studentForm = document.querySelector("#studentForm");
 const studentfullname = document.querySelector("#studentfullname");
@@ -44,6 +50,11 @@ let studentSeq = 1;
 let courseSeq = 1;
 const nextStudentId = () => studentSeq++;
 const nextCourseId = () => courseSeq++;
+
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+if (!currentUser) {
+  window.location.href = "login.html";
+}
 
 const VIEWS = {
   home: ".dashboradView",
@@ -146,7 +157,7 @@ const updateDashboard = () => {
 };
 
 const logActivity = (msg) => {
-  activityLog.copyWithin(0, 1); // shift everything left, free up the last slot
+  activityLog.copyWithin(0, 1);
   activityLog[4] = msg;
   enrollmentLog.innerHTML =
     Array.from(activityLog)
@@ -155,6 +166,14 @@ const logActivity = (msg) => {
       .map((m) => `<li class="">${m}</li>`)
       .join("") || `<li>No Activity Yet.</li>`;
 };
+
+//profile
+if (currentUser) {
+  userName.textContent = currentUser.name;
+  userRole.textContent = currentUser.role;
+  userEmail.textContent = currentUser.email;
+  userPhone.textContent = currentUser.phone;
+}
 
 //students
 studentForm.addEventListener("submit", (e) => {
@@ -299,7 +318,7 @@ const enrollPicker = () => {
     const { id, name } = students[i];
     const active =
       id === selectedStudentId
-        ? "bg-violet-1000 text-white"
+        ? "bg-violet-500 text-white"
         : "bg-violet-100 dark:bg-slate-950";
     studentButtons += `<button onclick="pickStudent(${id})" class="text-left px-4 py-2 rounded-xl text-sm font-semibold ${active}">${name}</button>`;
   }
@@ -313,7 +332,7 @@ const enrollPicker = () => {
     const full = count >= capacity;
     const active =
       id === selectedCourseId
-        ? "bg-violet-1000 text-white"
+        ? "bg-violet-500 text-white"
         : "bg-violet-100 dark:bg-slate-950";
     courseButtons += `<button ${full ? "disabled" : ""} onclick="pickCourse(${id})" class="text-left px-4 py-2 rounded-xl text-sm font-semibold ${active} ${full ? "opacity-40" : ""}">${name} (${count}/${capacity})</button>`;
   }
@@ -414,10 +433,7 @@ function search() {
 
     list += `
       <div class="bg-violet-50 dark:bg-slate-900 rounded-2xl p-4">
-        <div class="flex justify-between items-center">
-          <p class="font-bold">${name}</p>
-          ${allFull ? '<span class="text-xs font-bold text-red-400">All full</span>' : hasOpenSlot ? '<span class="text-xs font-bold text-green-500">Has open slot</span>' : ""}
-        </div>
+        <p class="font-bold">${name}</p>
         <p class="text-xs text-violet-500 dark:text-violet-300">${email}</p>
         <div class="flex flex-wrap gap-2 mt-2">${chips || '<span class="text-xs text-gray-400">Not enrolled yet</span>'}</div>
       </div>`;
