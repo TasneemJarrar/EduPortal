@@ -23,9 +23,9 @@
 
 <body class="min-h-screen font-body bg-violet-100 dark:bg-slate-950 text-violet-950 dark:text-violet-50">
 
-  <div class="flex flex-col md:flex-row min-h-screen">
+  <div class="flex flex-col md:flex-row h-screen">
     <aside
-      class="hidden md:flex md:flex-col md:justify-between w-48 border-r border-violet-50 dark:border-slate-900 p-6 gap-2 sticky top-0h-screen">
+      class="hidden md:flex md:flex-col md:justify-between w-48 border-r border-violet-50 dark:border-slate-900 p-6 gap-2 sticky top-0 h-screen">
       <div>
         <div class="flex gap-3 items-center">
           <div
@@ -87,20 +87,17 @@
           </p>
           <p class="text-xs text-violet-500 dark:text-violet-300">Student Management</p>
         </div>
-
       </div>
 
-      <div class="mt-3 flex gap-5 items-center">
+      <div class="flex gap-4 items-center">
         <button
           class="mode-toggle w-8 h-8 rounded-xl hover:bg-gray-300/60 dark:hover:bg-gray-100/30 hover:scale-105 hover:shadow-2xl dark:shadow-black/40 transition-all font-semibold ">
           <i class="fa-regular fa-moon mode-icon"></i>
         </button>
-        <div class="hidden sm:inline">
-          <p class="text-xs uppercase  font-semibold">
-            Current Time
-          </p>
-          <div class="clock mt-1 text-md font-bold tracking-tight"></div>
-        </div>
+        <a href="./login.html" class="hover:scale-105 text-rose-400 hover:text-rose-500 text-md"><i
+          class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
+
+        
       </div>
     </header>
 
