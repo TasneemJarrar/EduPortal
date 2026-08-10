@@ -4,14 +4,14 @@ const modeicons = document.querySelectorAll(".mode-icon");
 const html = document.documentElement;
 
 //get inputs
-const logInForm = document.querySelector("#logInForm");
+const registerForm = document.querySelector("#registerForm");
 const name = document.querySelector("#name");
 const username = document.querySelector("#username");
 const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
 const password = document.querySelector("#password");
 const usertype = document.querySelector("#usertype");
-const logInBtn = document.querySelector("#logInBtn");
+const registerBtn = document.querySelector("#registerBtn");
 
 //dark mode
 if (localStorage.getItem("theme") == "dark") {
@@ -99,7 +99,7 @@ const validatePassword = (password) => {
   }
 };
 
-logInForm.addEventListener("submit", (e) => {
+registerForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   //get input value
